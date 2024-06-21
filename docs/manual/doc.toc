@@ -1,0 +1,16 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Wprowadzenie}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Wstęp}{5}{section.1.1}%
+\contentsline {paragraph}{}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Przeznaczenie}{5}{section.1.2}%
+\contentsline {paragraph}{}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Założenia konstrukcyjne}{6}{section.1.3}%
+\contentsline {paragraph}{}{6}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Realizacja sprzętowa - hardware}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Wymagania sprzętowe}{9}{section.2.1}%
+\contentsline {paragraph}{}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Mikrokontroler}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Akcelerometr}{9}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Realizacja programowa - software}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Narzędzia programistyczne}{11}{section.3.1}%
+\contentsline {chapter}{\numberline {A}Kod źródłowy}{17}{appendix.A}%

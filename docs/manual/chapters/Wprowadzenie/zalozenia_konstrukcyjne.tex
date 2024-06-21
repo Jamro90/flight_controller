@@ -1,0 +1,51 @@
+\section{Założenia konstrukcyjne}
+\paragraph{}Po określeniu celu oraz przeznaczenia projektu należy zakreślić solidne ramy założeń co do konstrukcji kontrolera. W pierwszej koleności należy przedstawić hierarchię założeń według której odbędzie się rozdzielanie szarych komórek i topienie czasu. Oto zgrubny podział na charakter założeń:
+
+\begin{enumerate}
+  \item skuteczność prowadzenia zadania \label{hierarchia_1}
+  \item funkcjonalność
+  \item powtarzalność
+  \item prostota działania
+  \item ograniczenie gabarytu i masy \label{hierarchia_5}
+\end{enumerate}
+
+Zgodnie z tą listą należy przedstawić co kryje się pod tymi pojęciami. Do tego posłuży wykaz zadań jakie konstrukcja jako całość będzie musiała spełniać, aby wykonać swoje zadanie. W punkcie \ref{hierarchia_1} narzucono, aby sprzęt wykonywał swoje zadanie prawidłowo i nie stał się nieskutecznym działaniem marnującym zasoby (czas, amunicję, itp.). W tym celu należy rozpatrzeć czym jest skuteczność działania:
+
+\begin{itemize}
+  \item rejestrowanie obrazu z kamery video
+  \item uzyskiwanie prawidłowego obrazu
+  \item intuicyjne sterowanie w celu wprowadzania poprawek położenia
+  \item możliwość prowadzenia śledzenia
+\end{itemize}
+
+Funkcjonalność ma za zadanie zapewnić działanie na wymuszenia związane z charakterem działań wojskowych. Tutaj zostaje wykorzystany pomysł z prowadzenia obserwacji przy pomocy ognia prowadzonego z moździerza. Działanie to powinno być zapewnione dla najmniejszego moździerza dostępnego w działaniach zbrojnych (LM60), ponieważ dla coraz większych kalibrów znika ograniczenie wynikajce z ograniczenia miejsca (punkt \ref{hierarchia_5}). Zatem założenia wyglądają następująco:
+
+\begin{itemize}
+  \item możliwość szybkiego kalibrowania przyżądów
+  \item trwałość mechaniczną na nagłe przyspieszenia
+  \item zapewnienie trawałego przymocowania elemntów nawigacyjnych
+  \item kompaktowe ułożenie elementów
+  \item pzystowsowanie obwodu do kształtu koła
+\end{itemize}
+
+Zadaniem powtarzalność jest nauczenie (lub zapewnienie) użytkownika o przewidywalnym działaniu platformy latającej i zapewnienie prawidłowej reakcji na zaistniałe zachowania występujące podczas ekploatacji sprzętu. Jednocześnie zapewnia to schemat zachowań, który jest nioceniony (i niedoceniany) zwłaszcza w sytuacji stresowej (jaką jest prowadzenie działań wojejnych w bliskiem kontakcie z przeciwnikiem). Dlatego funkcjonalność jest tak wysoko w hierarchii. Od funkcjonalności będzie zależeć między innymi:
+
+\begin{itemize}
+  \item uruchomienie (lub wybudzenie) systemu
+  \item autonomiczne i manualne otwarcie ramion
+  \item stabilizacja lotu
+  \item wprowadzenie układu odniesiania dla sterowania
+  \item klawiszologia\footnote{termin zaczepnięty z gier video. Oznacza intuicyjne lub wyuczone rozumienie sterowania przez elementy strowania manipulatora}
+\end{itemize}
+
+Prostota działania jest elementem związanym bardziej z prowadzenie sztuki konstruowania urządzeń niż z wymaganiami działania. Istotą prostoty jest możliwość rozwiązywania skomplikowanych problemów za pomocą prostych mechanizmów. Pozwala to na szybką analizę układu oraz wprowadznia poprawek (elminiacji błędów). Brzytwa Okhama pozwala również na realizowanie zadań i procesów w sposób wystarczający (nie angażujący pełnej uwagi czy skupienia) co jest kluczowe podczas pracy w terenie. Należy również pamiętać o kosztach ponoszonych w czasie walk. Jeżeli bezzałogowic jest traktowany jak amunicja nie należy przejmować się problemami takimi jak odzyskiwanie materiałów, ponowne użytkowanie, oszczędzanie na amunicji. Oczywiście prostota rozwiązania powinna równać się z opłacalnością. Jeżeli koszt jednostkowy będzie niski, to produkcja masowa będzie jeszcze tańsza niż detaliczna. Zatem celem tego punku jest zachowanie prostoty działania przy jednoczesnym nie przekraczaniu budżetu na produkcję amunicji obserwacyjnej.
+
+\begin{itemize}
+  \item stosowanie tylko wymaganych komponentów i podzepołów  
+  \item optymalizacja czynności pilota i strzelca
+  \item optymalizacja działania mikrokontrolera
+  \item prosta struktura działania programu
+  \item możliwość poszerzenia możliwość o dodatkowe funkcje
+\end{itemize}
+
+Ostatni punkt jest wystarczająco jasny. Polega jedynie na tym iż całość musi zostać umieszczona na niewielkiej przestrzeni i dodatkowo dobrze gdyby za ograniczeniem wymiarów, ograniczałoby to również masę pociku. Żołnierze transporujący tego radzaju amunicję będą bardzo wdzięczni za szanowanie ich kręgosłupów.
