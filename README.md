@@ -1,12 +1,12 @@
 # PROJECT DISCRIPTION
 
 # Contents
-1.[Instalation](#Instalation)
-    1.1.[Requirements](##Reguirements)
-        1.1.1[Dependecies](###Dependecies)
-    1.1.[Linux](##Linux)
-    1.1.[Windows](##Windows)
-    1.1.[Mac](##Mac)
+1.[Instalation](#Instalation) \
+    1.1.[Requirements](##Reguirements) \
+        1.1.1[Dependecies](###Dependecies) \
+    1.1.[Linux](##Linux) \
+    1.1.[Windows](##Windows) \
+    1.1.[Mac](##Mac) \
 
 # Installation
 
