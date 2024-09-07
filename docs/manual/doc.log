@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.5.28)  8 JUN 2024 09:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.5.28)  31 AUG 2024 13:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1092,17 +1092,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Rozdział 2.
 (./chapters/Hardware/wymagania_sprzetowe.tex) (./chapters/Hardware/stm32f1.tex
-<~/flight_controller/images/bluepill_pinout.jpg, id=155, 288.8391pt x 187.6611p
-t>
-File: ~/flight_controller/images/bluepill_pinout.jpg Graphic file (type jpg)
-<use ~/flight_controller/images/bluepill_pinout.jpg>
-Package pdftex.def Info: ~/flight_controller/images/bluepill_pinout.jpg  used o
-n input line 4.
+<../images/bluepill_pinout.jpg, id=170, 288.8391pt x 187.6611pt>
+File: ../images/bluepill_pinout.jpg Graphic file (type jpg)
+<use ../images/bluepill_pinout.jpg>
+Package pdftex.def Info: ../images/bluepill_pinout.jpg  used on input line 4.
 (pdftex.def)             Requested size: 430.00462pt x 279.40062pt.
-) (./chapters/Hardware/akcelerometr.tex) [9] [10 </home/chris/flight_controller
-/images/bluepill_pinout.jpg>]
+) (./chapters/Hardware/akcelerometr.tex) [9] [10 <../images/bluepill_pinout.jpg
+>]
 Rozdział 3.
-(./chapters/Software/narzedzia_programistyczne.tex) [11
+(./chapters/Software/narzedzia_programistyczne.tex)
+(./chapters/Software/oprogramowanie_klienta.tex)
+(./chapters/Software/oprogramowanie_serwera.tex)
+(./chapters/Software/baza_danych.tex) [11
 
 ] [12
 
@@ -1110,8 +1111,7 @@ Rozdział 3.
 \tf@lof=\write6
 \openout6 = `doc.lof'.
 
-
-[13]
+ [13]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.1638pt, for example:
@@ -1173,9 +1173,9 @@ File: lstlang1.sty 2024/02/21 1.10 listings language file
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 121.
+nput line 124.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-21.
+24.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
@@ -1192,13 +1192,13 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `doc.out' has not changed.
-(rerunfilecheck)             Checksum: 86FD196FAB8676EC45EA3778E0ED7F94;1600.
+(rerunfilecheck)             Checksum: 1DDDEC4C589F45710EB3D576A646B286;2049.
  ) 
 Here is how much of TeX's memory you used:
- 34126 strings out of 476076
- 695930 string characters out of 5793775
+ 34150 strings out of 476076
+ 696624 string characters out of 5793775
  1991187 words of memory out of 5000000
- 55560 multiletter control sequences out of 15000+600000
+ 55572 multiletter control sequences out of 15000+600000
  574860 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  88i,11n,96p,1692b,1388s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1214,10 +1214,10 @@ m1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr
 /share/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf-di
 st/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/
 public/cm-super/sftt1000.pfb>
-Output written on doc.pdf (18 pages, 438771 bytes).
+Output written on doc.pdf (18 pages, 439936 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 274 words of extra memory for PDF output out of 10000 (max. 10000000)
 
