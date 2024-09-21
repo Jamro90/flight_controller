@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdbool.h>
@@ -6,11 +7,15 @@
 #define NOBUILD_IMPLEMENTATION
 #include "./tools/nobuild/nobuild.h"
 #define LOADER_IMPLEMENTATION
-#include "./tools/loader/loader.h"
+#include "./tools/term/loader.h"
+
+#define TERMINAL_CONTROLL_IMPLEMENTATION
+#include "./tools/term/terminal_controll.h"
 
 // macros
-#include "./tools/others/macronomicon.h"
+#include "./tools/term/macronomicon.h"
 
+#define MAX_ARRAY 10
 // build flags
 enum {
   BUILD_ALL,
@@ -19,6 +24,37 @@ enum {
   FLASH_STM32,
   EXIT
 };
+
+void drawLogo() {
+  // terminal params
+  int rows = 0;
+  int cols = 0;
+
+  struct winsize win = terminalSize(&rows, &cols);
+  ioctl(STDOUT_FILENO, TIOCGWINSZ, &win);
+    // file 
+  char file[] = "flight_controller_logo.txt";
+  FILE *fd = fopen("./tools/assets/flight_controller_logo.txt", "r");
+  char logo[512];
+  
+  // draw loop
+  clearScreen();
+  setCursor(0, 0);
+ 
+  while(!feof(fd) && fgets(logo, 512, fd)) {
+    fprintf(stdout, ESC_CL, HEX_2_RGB(CL_GREEN));
+    printf("\r");
+    for(int i = 0; i < rows; ++i) { 
+      (i == (cols - strlen(logo)) / 2) ? fprintf(stdout, "%s", logo) : fprintf(stdout, " ");
+      fflush(stdout);
+    } 
+  }
+
+  fprintf(stdout, CODE_END);
+  // memory free
+  fclose(fd);
+}
+
 
 void build_desktop() {
   Cmd cmd = {0};
@@ -129,56 +165,75 @@ int main(int argc, char **argv) {
   // projct's paths 
   int check = 1;
   int next = 0;
-  char file[] = "flight_controller_logo.txt";
-  FILE *fd = fopen("./tools/assets/flight_controller_logo.txt", "r");
-  char logo[128];
-  do {
-    fprintf(stdout, "%s", logo);
-  } while(fd != NULL && fgets(logo, 128, fd));
+  
+  drawLogo();
 
-  fclose(fd);
-
-  fprintf(stdout, "Check your compilation: \n \
-  [%1d] build all\n \
-  [%1d] build desktop \n \
-  [%1d] build STM \n \
-  [%1d] flash STM\n \
-  [%1d] exit \n ", 
+  fprintf(stdout, "Check your compilation: \n"
+                  "[%1d] build all \n"
+                  "[%1d] build desktop \n"
+                  "[%1d] build STM \n"
+                  "[%1d] flash STM \n"
+                  "[%1d] exit \n ",
   BUILD_ALL, BUILD_DESK, BUILD_STM32, FLASH_STM32, EXIT);
 
   printf("%14s", "Your choice: ");
   PANIC_EXIT(scanf("%1i", &check) != 1, "NaN input!");
   // begin building the project
+      char *log[MAX_ARRAY]; 
+      void *func_array[MAX_ARRAY];
   switch(check) {
   // build project
     case BUILD_ALL:
-      char *log[] = {
-        "Testing",
-        "Desktop build",
-        "Building STM32 code",
-        "Generating link for STM32",
-        "Link process for STM32",
-        "Generate binary WSAD",
-      NULL};
-      void *func_array[] = {
-        testing_paths,
-        build_desktop,
-        build_stm32,
-        generate_link,
-        linking_process,
-        generate_binary,
-      NULL};
-    Func_array arr = createArray(log, (void*)func_array);
-    prog(&arr);
+      log[next] = "Testing";
+      func_array[next] = testing_paths;
+
+      log[++next] = "Desktop build";
+      func_array[next] = build_desktop;
+
+      log[++next] = "Building STM32 code";
+      func_array[next] = build_stm32;
+
+      log[++next] = "Generating link for STM32";
+      func_array[next] = generate_link;
+
+      log[++next] = "Link process for STM32";
+      func_array[next] = linking_process;
+
+      log[++next] = "Generate binary WSAD";
+      func_array[next] = generate_binary;
+
+      log[++next] = NULL;
+      func_array[next] = NULL;
       break;
 
   // build desktop (only)
     case BUILD_DESK:
+      log[next] = "Testing";
+      func_array[next] = testing_paths;
+
+      log[++next] = "Desktop build";
+      func_array[next] = build_desktop;
+
+      log[++next] = NULL;
+      func_array[next] = NULL; 
       break;
   
   // build stm32 (only)
     case BUILD_STM32:
-      build_stm32();
+      log[++next] = "Building STM32 code";
+      func_array[next] = build_stm32;
+
+      log[++next] = "Generating link for STM32";
+      func_array[next] = generate_link;
+
+      log[++next] = "Link process for STM32";
+      func_array[next] = linking_process;
+
+      log[++next] = "Generate binary WSAD";
+      func_array[next] = generate_binary;
+
+      log[++next] = NULL;
+      func_array[next] = NULL;
       break;
   
   // flash bluepill 
@@ -187,14 +242,23 @@ int main(int argc, char **argv) {
       break;
 
     case EXIT:
-      fprintf(stdout, "%s\n", "Exitning...");
+      fprintf(stdout, "%s", "Exitning");
+      for(int i = 0; i < 3; ++i) {
+        fprintf(stdout, ".");
+        fflush(stdout);
+        usleep(500000);
+      }
+      fprintf(stdout, "\n");
+      clearScreen();
+      setCursor(0,0);
       return EXIT_SUCCESS;
 
     default:
       PANIC_EXIT(-1, "Option not available!");
   }
   
-
+  Func_array arr = createArray(log, (void*)func_array);
+  prog(&arr);
   // end building the project
   fflush(stdout);
   CODE_OK("COMPLETE!");
