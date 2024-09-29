@@ -4,9 +4,9 @@
 1.[Instalation](#Instalation) \
     1.1.[Requirements](##Reguirements) \
         1.1.1[Dependecies](###Dependecies) \
-    1.1.[Linux](##Linux) \
-    1.1.[Windows](##Windows) \
-    1.1.[Mac](##Mac) \
+    1.2.[Linux](##Linux) \
+    1.3.[Windows](##Windows) \
+    1.4.[Mac](##Mac)
 
 # Installation
 
@@ -15,7 +15,7 @@
 ### Dependencies
     [x] libopencm3
     [x] nobuild
-    [x] opengl 
+    [x] some visualization 
 ## Linux
 
 ## Window
